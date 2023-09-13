@@ -107,6 +107,23 @@ String mn = juminno.substring(size-1,size);
 	      
 	      
 	      //문제) 살아온 날수 구하기
+	      GregorianCalendar myBirth = new GregorianCalendar();
+	        myBirth.set(Calendar.YEAR, myYear);
+	        myBirth.set(Calendar.MONTH, myMonth-1);
+	        myBirth.set(Calendar.DATE, myDate);
+	        
+	        int alive=0; //살아온 날수
+	        while(!myBirth.after(now)){
+	            alive++;
+	            myBirth.add(Calendar.DATE, 1);
+	        }//while end
+	        
+	        System.out.println("살아온 날수: "+alive);
+	        
+	        //boolean before(Object when)  인자인 when과 비교하여 이전 시간이면 true
+	        //boolean after(Object when)   인자인 when과 비교하여 이후 시간이면 true
+	     
+	      
 	}//disp() end
 	
 }//class end
